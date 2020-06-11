@@ -41,6 +41,18 @@ These instructions is to help you get started,
 It Takes about 20 mins to build.
 Credits: https://www.binarytides.com/install-wxwidgets-ubuntu/
 
+### Installing in Windows
+- A nice intro to setup wxWidgets Video: https://www.youtube.com/watch?v=sRhoZcNpMb4
+- Download the Windows zip file - https://www.wxwidgets.org/downloads/
+- Unpack it
+- Go to build -> msw -> vx_vc16.sln 
+- Select compile mode (32 bit / 64 bit) and build
+- Restart Visual Studio
+- To manual setup refer ~/docs/msw/install.md
+- For Auto setup use the property sheet. 
+
+
+
 ### How To Use
 - After the prerequisites are done download the github repository
 -  $ make (type make to invoke the make file)

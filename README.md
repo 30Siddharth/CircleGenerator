@@ -15,9 +15,9 @@ credits: http://emis.maths.adelaide.edu.au/journals/BBMS/Bulletin/sup962/gander.
 # Walkthrough
 The GUI interface used is wxWidgets to create the GUI which is platform agnostic. The interface can be installed in Windows, Linux and Mac.
 1. The bacground dot grid is constructed with small rectangles that activate and deactivate based on mouse clicks.
-2. Drag and Release is used to select the circle center and radius.
-3. Once that is done we draw the digitized circle based on Breshenham algorithm. This is also used to determine max radius and min radius.
-4. We draw the circles based on this data using wxWidgets DC class members.
+2. Select all the required points >=3.
+3. Once that is done we find the radius and center using least squres.
+4. We draw the circle based on this data using wxWidgets DC class members.
 5. To refresh the window we can click on the screen.
 
 ## Getting Started

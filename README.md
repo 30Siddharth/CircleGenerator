@@ -28,6 +28,7 @@ These instructions is to help you get started,
 
 - g++ Compiler
 - wxWidgets
+- Eigen
 
 ### Installing wxWidgets 
 #### Linux
@@ -51,6 +52,7 @@ Credits: https://www.binarytides.com/install-wxwidgets-ubuntu/
 - To manual setup refer ~/docs/msw/install.md
 - For Auto setup use the property sheet. 
 - NOTE: The application build has to be build in x86 mode
+- To get eigen in visual studio use Tools->NuGet Package Manager
 
 
 

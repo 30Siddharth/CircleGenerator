@@ -129,7 +129,9 @@ public:
             if (generate_state == 1)
             {
 
-                Refresh();
+                Update();
+            
+                point.Clear();
                 generate_state = 0;
                 grid_init = 0;
                 drawGridInit();    

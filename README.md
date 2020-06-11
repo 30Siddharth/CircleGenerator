@@ -1,4 +1,3 @@
-# CircleGenerator
 
 # Program2 - Circle Generator
 
@@ -64,8 +63,8 @@ Credits: https://www.binarytides.com/install-wxwidgets-ubuntu/
     - First Release
     - Known Bug
         - The screen resets on increasing or decreasing size of the window
-        - Grid fails to show up occosanialy. First response is slightly delayed
-        - Refresh is not snappy.
+        - Dots Selection not accurate always
+        - Generate Button doesnt show up after refresh. Hover hover area to show it. 
 
 
 ## Authors

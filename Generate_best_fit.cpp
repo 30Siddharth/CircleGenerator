@@ -83,23 +83,28 @@ public:
 
         // invoke minCircle function to generate the center and radius of the circle
         min_circle *minCircle= new min_circle();
-        minCircle->solveMinCircle(samplePoints, xc, yc, radius);
-       
+        if(minCircle->solveMinCircle(samplePoints, xc, yc, radius))
+            drawGridInit();
         // Draw the Circle
-        wxPoint origin = circle.GetDeviceOrigin();
-        circle.SetDeviceOrigin(origin.x, origin.y);
-        circle.SetBrush(wxBrush(wxTransparentColour, wxTRANSPARENT));
-        circle.SetPen(penB);
-        circle.DrawCircle(xc, yc, radius);
-        circle.SetPen(wxNullPen);
+        else
+        {
+                    
+            wxPoint origin = circle.GetDeviceOrigin();
+            circle.SetDeviceOrigin(origin.x, origin.y);
+            circle.SetBrush(wxBrush(wxTransparentColour, wxTRANSPARENT));
+            circle.SetPen(penB);
+            circle.DrawCircle(xc, yc, radius);
+            circle.SetPen(wxNullPen);
 
-        cout << xc << " " << yc << " " << radius << endl;
-       
-        grid_init = 1;
-        generate_state = 1;
-        samplePoints.clear();
+            cout << xc << " " << yc << " " << radius << endl;
+        }
+            grid_init = 1;
+            generate_state = 1;
+            samplePoints.clear();
+        
         evt.Skip();
     }
+
     //invoked by mouse operations
     void onMouseClick(wxMouseEvent &event)
     {
@@ -136,29 +141,34 @@ public:
                 x = floor((pt1.x - this->GetScreenPosition().x - STARTDOTCENTER) /(float) (PIXTODOTS));
                 y = floor((pt1.y - this->GetScreenPosition().y - STARTDOTCENTER) /(float) (PIXTODOTS));
                 
-                // if else block is for toggling the grid points
-                if (state_btn[x * FIELDWIDTH + y] == 0)
+                // Handle button clickes outside grid
+                if(!(x>=FIELDWIDTH || x< 0 || y>=FIELDHEIGHT || y <0))
                 {
+                     
+                    // if else block is for toggling the grid points
+                    if (state_btn[x * FIELDWIDTH + y] == 0)
+                    {
 
-                   
-                    point.SetPen(penB);
-                    point.SetBrush(wxBrush(*wxBLUE));
-                    point.DrawRectangle(STARTDOT + x * PIXTODOTS, STARTDOT + y * PIXTODOTS, GRIDDOTSIZE, GRIDDOTSIZE);
-                    point.SetPen(wxNullPen);
-                    point.SetBrush(wxNullBrush);
-                    state_btn[x * FIELDWIDTH + y] = 1;
-                
-                }
-                else
-                {
-                   
-                    point.SetPen(penG);
-                    point.SetBrush(wxBrush(*wxLIGHT_GREY));
-                    point.DrawRectangle(STARTDOT + x * PIXTODOTS, STARTDOT + y * PIXTODOTS, GRIDDOTSIZE, GRIDDOTSIZE);
-                    point.SetPen(wxNullPen);
-                    point.SetBrush(wxNullBrush);
-                    state_btn[x * FIELDWIDTH + y] = 0;
-                   
+                    
+                        point.SetPen(penB);
+                        point.SetBrush(wxBrush(*wxBLUE));
+                        point.DrawRectangle(STARTDOT + x * PIXTODOTS, STARTDOT + y * PIXTODOTS, GRIDDOTSIZE, GRIDDOTSIZE);
+                        point.SetPen(wxNullPen);
+                        point.SetBrush(wxNullBrush);
+                        state_btn[x * FIELDWIDTH + y] = 1;
+                    
+                    }
+                    else
+                    {
+                    
+                        point.SetPen(penG);
+                        point.SetBrush(wxBrush(*wxLIGHT_GREY));
+                        point.DrawRectangle(STARTDOT + x * PIXTODOTS, STARTDOT + y * PIXTODOTS, GRIDDOTSIZE, GRIDDOTSIZE);
+                        point.SetPen(wxNullPen);
+                        point.SetBrush(wxNullBrush);
+                        state_btn[x * FIELDWIDTH + y] = 0;
+                    
+                    }
                 }
             }
         }

@@ -41,7 +41,7 @@ These instructions is to help you get started,
 It Takes about 20 mins to build.
 Credits: https://www.binarytides.com/install-wxwidgets-ubuntu/
 
-### Installing in Windows
+#### Windows
 - A nice intro to setup wxWidgets Video: https://www.youtube.com/watch?v=sRhoZcNpMb4
 - Download the Windows zip file - https://www.wxwidgets.org/downloads/
 - Unpack it

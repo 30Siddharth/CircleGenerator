@@ -1,5 +1,5 @@
 
-# Program2 - Circle Generator
+# Circle Generator
 
 # Introduction
 This code creates an App that allows user to create circle by selection points.

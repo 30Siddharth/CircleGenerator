@@ -13,7 +13,7 @@ credits: http://emis.maths.adelaide.edu.au/journals/BBMS/Bulletin/sup962/gander.
 - if no. of points <3 then the matrix looses rank and we dont get a solution. Otherwise the matrix gives the solution
 
 # App Demo
-![](In-Action.gif)
+![](In-Action.mp4)
 # Walkthrough
 The GUI interface used is wxWidgets to create the GUI which is platform agnostic. The interface can be installed in Windows, Linux and Mac.
 1. The bacground dot grid is constructed with small rectangles that activate and deactivate based on mouse clicks.
